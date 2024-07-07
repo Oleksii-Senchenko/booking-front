@@ -1,23 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { decrement, increment } from "./userOperation";
 
 export const userSlice = createSlice({
   name: "user",
   initialState: {
     value: 0,
   },
-  reducers: {
-    incriment: (state) => {
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action) => {
+  extraReducers(builder) {
+    builder.addCase(increment.fulfilled, (state, action) => {
       state.value += action.payload;
-    },
+    });
+    builder.addCase(decrement.fulfilled, (state, action) => {
+      state.value += action.payload;
+    });
   },
 });
 
-export const { incriment, decrement, incrementByAmount } = userSlice.actions;
+// export const { increment, decrement, incrementByAmount } = userSlice.actions;
 
-export default userSlice.reducer
+export default userSlice.reducer;

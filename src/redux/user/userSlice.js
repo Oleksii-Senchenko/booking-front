@@ -1,21 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { decrement, increment } from "./userOperation";
+import {  getCurrency } from "./userOperation";
 
 export const userSlice = createSlice({
   name: "user",
   initialState: {
-    value: 0,
+   currency: null
   },
   extraReducers(builder) {
-    builder.addCase(increment.fulfilled, (state, action) => {
-      state.value += action.payload;
+    builder.addCase(getCurrency.fulfilled, (state, action) => {
+      state.currency = action.payload;
     });
-    builder.addCase(decrement.fulfilled, (state, action) => {
-      state.value += action.payload;
-    });
+   
   },
 });
 
-// export const { increment, decrement, incrementByAmount } = userSlice.actions;
 
 export default userSlice.reducer;

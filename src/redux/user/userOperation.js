@@ -1,31 +1,15 @@
-import {  createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
-export const increment = createAsyncThunk(
-    'user/increment',
-    async (num) => {
+const apiKey = process.env.REACT_APP_CURRENCY_API_KEY;
 
-      const response = await new Promise((resolve) =>
-        setTimeout(() => resolve(num), 1000)
-      );
-      return response;
-    }
+export const getCurrency = createAsyncThunk("user/currency", async (curr) => {
+  const responce = await axios.get(
+    `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${curr}`
   );
-
-// export const increment = createAsyncThunk(
-//   "user/increment",
-//   async (num, thunkAPI) => {
-
-//     const responce = await setTimeout(()=> num, 1000)
-//     return responce
-//   }
-// );
-export const decrement = createAsyncThunk(
-  "user/decrement",
-  async (num, thunkAPI) => {
-
-    const responce = await setTimeout(()=> num, 1000)
-    return responce
+  if (!responce) {
+    console.log("Ba");
   }
-);
+  return responce.data.conversion_rates;
+});
 
-// export const { increment, decrement, incrementByAmount } = userSlice.actions;

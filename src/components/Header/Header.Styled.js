@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mainSize, subSize } from "../Fonts/fonts";
+import { btnSize, mainSize, subSize } from "../Fonts/fonts";
 import { Link } from "react-router-dom";
 
 export const HeaderWrapper = styled.div`
@@ -7,6 +7,14 @@ export const HeaderWrapper = styled.div`
   padding: 10px;
   flex-direction: column;
   padding-bottom: 40px;
+  width: 1200px;
+  background-color: #003b95;
+  align-items: center;
+  text-align: start;
+`;
+export const HandleSize = styled.div`
+  width: 1200px;
+  margin-bottom: 30px;
 `;
 export const Title = styled(Link)`
   font-size: ${mainSize};
@@ -48,5 +56,16 @@ export const Btn = styled.button`
 
   &:hover {
     box-shadow: 0 0 100px rgba(255, 255, 255, 0.5);
+  }
+`;
+
+export const StrongText = styled.strong`
+  margin-right: auto;
+  color: white;
+  font-size: ${mainSize};
+  font-weight: bold;
+  span {
+    display: block;
+    font-size: ${btnSize};
   }
 `;

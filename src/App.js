@@ -1,5 +1,5 @@
 import React from "react";
-import AuthPage from "./pages/AuthPage";
+import AuthPage from "./pages/AuthPage/AuthPage";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 

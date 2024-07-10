@@ -1,17 +1,25 @@
 import styled from "styled-components";
-import { mainSize, subSize } from "../fonts";
+import { mainSize, subSize } from "../Fonts/fonts";
 import { Link } from "react-router-dom";
+
+export const HeaderWrapper = styled.div`
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  padding-bottom: 40px;
+`;
 export const Title = styled(Link)`
-font-size: ${mainSize};
-font-weight:bold;
-text-decoration: none;
-color: white;
+  font-size: ${mainSize};
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
 `;
 export const BoxHeader = styled.div`
   display: flex;
-
+  background-color: #003b95;
   padding: 10px;
   justify-content: space-between;
+  margin-bottom: 15px;
 `;
 
 export const SubInformation = styled.div`
@@ -37,9 +45,8 @@ export const Btn = styled.button`
 
   background-color: white;
   font-size: ${subSize};
-  
-  
+
   &:hover {
-    box-shadow: 0 0 100px rgba(255, 255, 255, 0.5)
+    box-shadow: 0 0 100px rgba(255, 255, 255, 0.5);
   }
 `;

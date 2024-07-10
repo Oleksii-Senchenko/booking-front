@@ -1,9 +1,9 @@
 import React from 'react'
-import AuthForm from '../components/auth/AuthForm'
+import RegisterForm from '../../components/RegisterForm/RegisterForm'
 
 export const AuthPage = () => {
   return (
-    <AuthForm/>
+    <RegisterForm/>
   )
 }
 

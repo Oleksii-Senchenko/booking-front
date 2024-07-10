@@ -7,12 +7,9 @@ const Layout = () => {
     <>
       <Header />
 
-      <div>
-        <button>
-          <Link to="/auth">AUTH</Link>
-        </button>
+      
         <Outlet />
-      </div>
+    
     </>
   );
 };

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { subSize } from "../fonts";
+import { subSize } from "../Fonts/fonts";
 export const Currency = styled.div``;
 
 export const SelectWrapper = styled.div`
